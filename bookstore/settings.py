@@ -26,7 +26,7 @@ SECRET_KEY = 'e$^4^o)m=vfv-=)(^p_#6ws(a26=72ohbt2i)t4ppwavh-gyet'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['edailyfocus.com']
 
 
 # Application definition
