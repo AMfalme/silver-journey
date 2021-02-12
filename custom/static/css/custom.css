@@ -1,3 +1,15 @@
 .logo-img {
-  width: 285px;
+  width: 185px;
+}
+.navbar.navbar-accounts .navbar-brand {
+  background: url(../images/logo.png) no-repeat scroll 0 0 transparent;
+  text-indent: -9999px;
+  display: block;
+  width: 60px;
+  height: 38px;
+  padding: 0;
+  margin: 0.5rem;
+}
+.container {
+  min-width: 90%;
 }

@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/edailyfocus.css' %}" />
 
 
-<!-- <link rel="stylesheet" href="{% static 'css/welcome_page.css' %}"> -->
+<link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">
 <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" id="bootstrap-css">
 <script src="{% static 'js/jquery.min.js' %}"></script>
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
@@ -13,7 +13,52 @@
 <!------ Include the above in your HEAD tag ---------->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
     integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap" rel="stylesheet">
 {% endblock %}
 {% block navigation %}
-{% include 'custom_partials/nav.html' %}
+{% load currency_filters %}
+{% load category_tags %}
+{% load i18n %}
+
+<nav class="{% block nav_classes %}navbar navbar-expand-lg navbar-dark {% endblock %}">
+    {% block navbar_toggler %}
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    {% endblock %}
+
+    {% block navbar_basket %}
+    <a class="btn btn-secondary float-right btn-cart ml-auto d-inline-block d-md-none"
+        href="{% url 'basket:summary' %}">
+        <i class="fas fa-shopping-cart"></i>
+        {% trans "Basket" %}
+        {% if not request.basket.is_empty %}
+        {% if request.basket.is_tax_known %}
+        {% blocktrans with total=request.basket.total_incl_tax|currency:request.basket.currency %}
+        Total: {{ total }}
+        {% endblocktrans %}
+        {% else %}
+        {% blocktrans with total=request.basket.total_excl_tax|currency:request.basket.currency %}
+        Total: {{ total }}
+        {% endblocktrans %}
+        {% endif %}
+        {% endif %}
+    </a>
+    {% endblock %}
+
+    {% block navbar_collapse %}
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        {% block nav %}
+        <ul class="navbar-nav m-auto">
+
+
+            {% include 'custom_partials/nav.html' %}
+
+        </ul>
+        {% endblock %}
+    </div>
+    {% endblock %}
+</nav>
 {% endblock %}

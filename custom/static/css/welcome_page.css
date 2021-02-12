@@ -1,5 +1,5 @@
-a {
-  color: #696969 !important;
+.nav-link {
+  color: #211c1c !important;
 }
 img {
   width: 100%;
@@ -35,7 +35,7 @@ img {
   text-align: left;
 }
 .carousel-caption h1 {
-  color: #dd0000;
+  color: #ffa80c;
   background-color: #;
 }
 .most-car-box:hover {

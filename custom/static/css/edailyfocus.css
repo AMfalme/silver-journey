@@ -1,0 +1,15 @@
+.container {
+  min-width: 90%;
+}
+.bg-dark {
+  background-color: #1e254e !important;
+}
+* {
+  font-family: "Nunito", sans-serif;
+}
+nav.accounts {
+  background-color: rgb(0 234 53 / 84%) !important;
+}
+.basket-mini {
+  margin-top: 10px;
+}
