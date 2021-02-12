@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'e$^4^o)m=vfv-=)(^p_#6ws(a26=72ohbt2i)t4ppwavh-gyet'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['edailyfocus.com', 'localhost']
 

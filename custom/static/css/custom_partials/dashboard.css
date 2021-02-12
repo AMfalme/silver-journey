@@ -1,0 +1,14 @@
+.navbar.navbar-accounts .navbar-brand {
+  background: url("../../images/transparent.png") no-repeat;
+
+  width: 155px;
+
+  background-size: cover;
+}
+.bg-dark {
+  background-color: #1e254e !important;
+}
+.navbar.navbar-accounts {
+  background-image: linear-gradient(to bottom, #343a40 0%, #49637d 100%);
+  background-repeat: repeat-x;
+}

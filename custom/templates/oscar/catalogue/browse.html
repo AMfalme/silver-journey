@@ -1,0 +1,156 @@
+{% extends 'oscar/catalogue/browse.html' %}
+{% load static %}
+{% load category_tags %}
+
+{% load product_tags %}
+{% load i18n %}
+
+{% block content_wrapper %}
+
+<div class="banner slider">
+    <div id="demo" class="carousel slide" data-ride="carousel" data-interval="false">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'images/hero-img.jpeg' %}" style="height: 700px;" alt="Los Angeles">
+                <div class="carousel-caption">
+                    <div class="col-md-12">
+                        <h1 class="pb-2"><strong>E-Daily Focus Home of Planinng </strong> </h1>
+                        <h4>For planners who want to make their dream come true by jotting down their daily plan.</h4>
+                        <button type="button" class="btn btn-success mt-4">Shop Now</button>
+                        <button type="button" class="btn btn-dark mt-4">Learn more</button>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/heroimg.jpg' %}" style="height: 700px;" alt="Los Angeles">
+                <div class="carousel-caption">
+                    <div class="col-md-7">
+                        <h1 class="pb-2"><strong>E-Daily Focus Home of Planinng </strong> </h1>
+                        <h4>For planners who want to make their dream come true by jotting down their daily plan.</h4>
+                        <button type="button" class="btn btn-success mt-4">Shop Now</button>
+                        <button type="button" class="btn btn-dark mt-4">Learn more</button>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/hero-img.png' %}" style="height: 700px;" alt="Los Angeles">
+                <div class="carousel-caption">
+                    <div class="col-md-7">
+                        <h1 class="pb-2"><strong>E-Daily Focus Home of Planinng </strong> </h1>
+                        <h4>For planners who want to make their dream come true by jotting down their daily plan.</h4>
+                        <button type="button" class="btn btn-success mt-4">Shop Now</button>
+                        <button type="button" class="btn btn-dark mt-4">Learn more</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+
+    </div>
+</div>
+<div class="container">
+    {% category_tree as tree_categories %}
+    {% if tree_categories %}
+    <h4>{% trans "Show results for" %}</h4>
+    <div class="side_categories card card-body bg-light">
+        <ul class="nav nav-list">
+            {% for tree_category in tree_categories %}
+            <li class="mt-2">
+                <a href="{{ tree_category.url }}">
+                    {% if tree_category.pk == category.pk %}
+                    <strong>{{ tree_category.name }}</strong>
+                    {% else %}
+                    {{ tree_category.name }}
+                    {% endif %}
+                </a>
+
+                {% if tree_category.has_children %}<ul>{% else %}
+            </li>{% endif %}
+            {% for n in tree_category.num_to_close %}
+        </ul>
+        </li>
+        {% endfor %}
+        {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    {% if has_facets %}
+    <h4>{% trans "Refine by" %}</h4>
+    <div class="side_categories card card-body bg-light">
+        {% for field, data in facet_data.items %}
+        {% if data.results %}
+        {% include 'oscar/search/partials/facet.html' with name=data.name items=data.results %}
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+
+{% block content %}
+
+<form method="get">
+    {# Render other search params as hidden inputs #}
+    {% for value in selected_facets %}
+    <input type="hidden" name="selected_facets" value="{{ value }}" />
+    {% endfor %}
+    <input type="hidden" name="q" value="{{ search_form.q.value|default_if_none:"" }}" />
+
+    {% if paginator.count %}
+    {% if paginator.num_pages > 1 %}
+    {% blocktrans with start=page_obj.start_index end=page_obj.end_index count num_results=paginator.count %}
+    <strong>{{ num_results }}</strong> result - showing <strong>{{ start }}</strong> to <strong>{{ end }}</strong>.
+    {% plural %}
+    <strong>{{ num_results }}</strong> results - showing <strong>{{ start }}</strong> to <strong>{{ end }}</strong>.
+    {% endblocktrans %}
+    {% else %}
+    {% blocktrans count num_results=paginator.count %}
+    <strong>{{ num_results }}</strong> result.
+    {% plural %}
+    <strong>{{ num_results }}</strong> results.
+    {% endblocktrans %}
+    {% endif %}
+    {% if form %}
+    <div class="float-right">
+        {% include "oscar/partials/form_field.html" with field=form.sort_by style='horizontal' %}
+    </div>
+    {% endif %}
+    {% else %}
+    <p>
+        {% trans "<strong>0</strong> results." %}
+    </p>
+    {% endif %}
+</form>
+
+{% if products %}
+<section>
+    <div>
+        <ol class="row list-unstyled ml-0 pl-0">
+            {% for product in products %}
+            <li class="col-sm-6 col-md-4 col-lg-3">{% render_product product %}</li>
+            {% endfor %}
+        </ol>
+        {% include "oscar/partials/pagination.html" %}
+    </div>
+</section>
+{% else %}
+<p class="nonefound">{% trans "No products found." %}</p>
+{% endif %}
+
+{% endblock content %}
+{% endblock %}
