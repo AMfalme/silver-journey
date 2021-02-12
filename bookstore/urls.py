@@ -18,8 +18,10 @@ from django.urls import path
 from django.apps import apps
 from django.urls import include, path
 from django.contrib import admin
-
+from django.conf.urls.static import static
+from django.conf import settings
 from custom import views as custom_views
+
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
 
@@ -28,8 +30,8 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
 
-    path('products', include(apps.get_app_config('oscar').urls[0])),
+    path('', include(apps.get_app_config('oscar').urls[0])),
 
-    path('', custom_views.home),
+    path('home', custom_views.home),
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
