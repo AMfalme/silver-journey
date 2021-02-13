@@ -1,0 +1,77 @@
+{% extends "oscar/catalogue/partials/product.html" %}
+{% load static %}
+{% block styles %}
+
+<link rel="stylesheet" href="{% static 'css/product.css' %}">
+{% endblock %}
+{% load display_tags %}
+{% load i18n %}
+{% load image_tags %}
+{% load reviews_tags %}
+
+{% block product %}
+<article class="product_pod">
+
+
+
+
+
+
+
+
+
+    <div class="col-md-12 col-sm-12">
+        <div class="product-grid">
+            <div class="product-image">
+                {% block product_image %}
+                {% with image=product.primary_image %}
+                {% oscar_thumbnail image.original "x155" upscale=False as thumb %}
+                <a href="{{ product.get_absolute_url }}" title="{{ product.get_title }}">
+                    <img class="pic-1" src="{{ thumb.url }}" alt="{{ product.get_title }}"
+                        class="img-thumbnail w-auto mx-auto my-0">
+                    <img class="pic-2" src="{{ thumb.url }}" alt="{{ product.get_title }}"
+                        class="img-thumbnail w-auto mx-auto my-0">
+
+                </a>
+                {% endwith %}
+                {% endblock %}
+                <ul class="social">
+                    <li><a href="{{ product.get_absolute_url }}" data-tip="Quick View"><i class="fa fa-search"></i></a>
+                    </li>
+                </ul>
+                <span class="product-new-label">
+                    {% include "oscar/catalogue/partials/stock_record.html" %}
+                </span>
+                <span class="product-discount-label">20%</span>
+            </div>
+            {% block product_review %}
+            {% iffeature "reviews" %}
+            <ul class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </ul>
+            {% endiffeature %}
+            {% endblock %}
+            <div class="product-content">
+                {% block product_title %}
+                <h3 class="title"><a href="{{ product.get_absolute_url }}" title="{{ product.get_title }}">
+                        {{ product.get_title|truncatewords:4 }}
+                    </a></h3>
+                {% endblock %}
+                {% block product_price %}
+                <div class="product_price w-100">
+                    {% include "oscar/catalogue/partials/stock_record.html" %}
+                    {% if not product.is_parent and not product.has_options %}
+                    {% include "oscar/catalogue/partials/add_to_basket_form_compact.html" %}
+                    {% endif %}
+                </div>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+</article>
+{% endblock %}
