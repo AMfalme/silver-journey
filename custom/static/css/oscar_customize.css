@@ -1,5 +1,5 @@
 .nav-link {
-  color: hsl(0deg 0% 100%) !important;
+  color: #211c1c !important;
 }
 .logo-img {
   width: 185px;
@@ -19,7 +19,7 @@
   padding: 0 15px;
 }
 .header {
-  background-color: hsl(231deg 71% 13%) !important;
+  background-color: hsl(25deg 63% 81%) !important;
 }
 .header .page_inner .btn {
   padding: 0px 5px;
