@@ -128,7 +128,10 @@ nav.accounts {
 .navbar {
   z-index: 10000;
 }
-
+.nav-list li {
+  width: 100%;
+  display: block;
+}
 /* Footer section */
 
 .footer {
