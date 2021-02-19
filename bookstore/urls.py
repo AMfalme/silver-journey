@@ -32,6 +32,7 @@ urlpatterns = [
 
     path('', include(apps.get_app_config('oscar').urls[0])),
 
-    # path('home', custom_views.home),
+    path('home', custom_views.home),
+    path('contact', custom_views.contact)
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

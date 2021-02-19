@@ -1,5 +1,5 @@
-.container {
-  min-width: 100%;
+body {
+  /* background-color: #edc9af; */
 }
 .bg-dark {
   background-color: #1e254e !important;
@@ -105,8 +105,50 @@
       format("svg"); /* Legacy iOS */
 }
 nav.accounts {
-  background-color: rgb(0 234 53 / 84%) !important;
+  background-color: #edc9af !important;
 }
 .basket-mini {
   margin-top: 10px;
+  color: hsl(0deg 2% 55%) !important;
+  font-size: 10px;
+}
+.carousel-caption h1 strong {
+  color: #9c5000;
+}
+.j-content {
+  display: flex;
+  justify-content: space-around;
+}
+.carousel-img__size {
+  height: 250px;
+  min-width: 100%;
+}
+
+.navbar {
+  z-index: 10000;
+}
+
+/* Footer section */
+
+.footer {
+  background-color: #09102f;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+}
+.footer a {
+  color: rgba(255, 255, 255, 0.7);
+}
+.footer ul {
+  list-style: none;
+}
+.footer li {
+  margin-bottom: 1em;
+}
+.footer .header {
+  margin-bottom: 10px;
+}
+
+.footer img {
+  width: 53%;
+  margin: 25px auto;
 }

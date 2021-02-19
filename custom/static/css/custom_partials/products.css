@@ -78,7 +78,7 @@ h3.h3 {
 }
 .product-grid .social li a:hover {
   color: #fff;
-  background-color: #ef5777;
+  background-color: #e67500;
 }
 .product-grid .social li a:after,
 .product-grid .social li a:before {
@@ -112,7 +112,7 @@ h3.h3 {
 .product-grid .product-discount-label,
 .product-grid .product-new-label {
   color: #fff;
-  background-color: #ef5777;
+  background-color: #e67500;
   font-size: 12px;
   text-transform: uppercase;
   padding: 2px 7px;
@@ -166,7 +166,7 @@ h3.h3 {
 }
 .product-grid .title a:hover,
 .product-grid:hover .title a {
-  color: #ef5777;
+  color: #e67500;
 }
 .product-grid .price {
   color: #333;

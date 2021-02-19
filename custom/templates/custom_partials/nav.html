@@ -1,7 +1,7 @@
-{% load static %}
 {% load i18n %}
+{% load static %}
 {% load category_tags %}
-<nav class="navbar navbar-expand-sm     ">
+<nav class="navbar navbar-expand-sm w-100 ">
 
 
     <!-- Toggler/collapsibe Button -->
@@ -11,7 +11,7 @@
     <!-- Navbar links -->
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
 
-        <ul class="navbar-nav m-auto w-100 border-top border-secondary">
+        <ul class="navbar-nav w-100 border-secondary j-content">
             {% block nav_items %}
             <!-- Brand -->
             <li>
@@ -27,7 +27,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     {% category_tree depth=1 as tree_categories %}
-                    <a class="dropdown-item" href="{% url 'catalogue:index' %}">{% trans "All products" %}</a>
+                    <a class="dropdown-item" href="{% url 'catalogue:index' %}"></a>
                     {% if tree_categories %}
                     <div class="dropdown-divider"></div>
                     {% for tree_category in tree_categories %}
@@ -45,11 +45,6 @@
             <li class="nav-item dropdown mt-3">
                 <a class="nav-link" href="/">
                     Shop
-                </a>
-            </li>
-            <li class="nav-item dropdown mt-3">
-                <a class="nav-link" href="/#about" id="navbardrop" data-toggle="dropdown">
-                    About us
                 </a>
             </li>
             <li class="nav-item mt-3">

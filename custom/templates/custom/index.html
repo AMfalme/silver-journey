@@ -12,16 +12,16 @@ Delete the line below if you're just getting started and want to remove the welc
 
 <link rel="stylesheet" href="{% static 'css/custom_partials/products.css' %}">
 
-<!-- <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+<!-- <link rel="stylesheet" href="{% static 'css/custom.css' %}">--->
 
-<link rel="stylesheet" href="{% static 'css/edailyfocus.css' %}"> -->
+<link rel="stylesheet" href="{% static 'css/edailyfocus.css' %}">
 <!------ Include the above in your HEAD tag ---------->
 
 <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
     integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous"> -->
 {% endblock styles %}
 {% block content_wrapper %}
-<div class="page" style="margin-top: -10px;">
+<div class="page" style="margin: 10px auto 20px;">
     <div class="page_inner">
         {% block breadcrumbs %}{% endblock %}
         {% block header %}
@@ -44,49 +44,24 @@ Delete the line below if you're just getting started and want to remove the welc
                         <ul class="carousel-indicators">
                             <li data-target="#demo" data-slide-to="0" class="active"></li>
                             <li data-target="#demo" data-slide-to="1"></li>
-                            <li data-target="#demo" data-slide-to="2"></li>
                         </ul>
 
                         <!-- The slideshow -->
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="{% static 'images/hero-img.jpeg' %}" style="height: 700px;min-width: 100%;
+                            <!-- <div class="carousel-item active">
+                                <img src="{% static 'images/hero-img.jpg' %}" style="height: 700px;min-width: 100%;
                 min-width: 100%;" alt="Los Angeles">
-                                <div class="carousel-caption">
-                                    <div class="col-md-12">
-                                        <h1 class="pb-2"><strong>E-Daily Focus Home of Planinng </strong> </h1>
-                                        <h4>For planners who want to make their dream come true by jotting down their
-                                            daily plan.</h4>
-                                        <button type="button" class="btn btn-success mt-4">Shop Now</button>
-                                        <button type="button" class="btn btn-dark mt-4">Learn more</button>
-                                    </div>
-                                </div>
+                                
+                            </div> -->
+                            <div class="carousel-item active">
+                                <img src="{% static 'images/hero-image.jpg' %}" class="carousel-img__size"
+                                    alt="Los Angeles">
+
                             </div>
                             <div class="carousel-item">
-                                <img src="{% static 'images/heroimg.jpg' %}" style="height: 700px; min-width: 100%;"
+                                <img src="{% static 'images/hero-img.jpg' %}" class="carousel-img__size"
                                     alt="Los Angeles">
-                                <div class="carousel-caption">
-                                    <div class="col-md-12">
-                                        <h1 class="pb-2"><strong>E-Daily Focus Home of Planinng </strong> </h1>
-                                        <h4>For planners who want to make their dream come true by jotting down their
-                                            daily plan.</h4>
-                                        <button type="button" class="btn btn-success mt-4">Shop Now</button>
-                                        <button type="button" class="btn btn-dark mt-4">Learn more</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="{% static 'images/hero-img.png' %}" style="height: 700px; min-width: 100%;"
-                                    alt="Los Angeles">
-                                <div class="carousel-caption">
-                                    <div class="col-md-12">
-                                        <h1 class="pb-2"><strong>E-Daily Focus Home of Planinng </strong> </h1>
-                                        <h4>For planners who want to make their dream come true by jotting down their
-                                            daily plan.</h4>
-                                        <button type="button" class="btn btn-success mt-4">Shop Now</button>
-                                        <button type="button" class="btn btn-dark mt-4">Learn more</button>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
 
@@ -107,7 +82,6 @@ Delete the line below if you're just getting started and want to remove the welc
         </div>
     </div>
 </div>
-{% include 'oscar/catalogue/browse.html'%}
 
 
 {% endblock %}

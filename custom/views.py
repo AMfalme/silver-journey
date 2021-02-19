@@ -5,3 +5,7 @@ from django.template.response import TemplateResponse
 
 def home(request):
     return TemplateResponse(request, 'custom/index.html')
+
+
+def contact(request):
+    return TemplateResponse(request, 'custom/contact.html')
