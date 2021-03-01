@@ -3,6 +3,7 @@
 {% load category_tags %}
 <nav class="navbar navbar-expand-sm w-100 ">
 
+    {% category_tree as tree_categories %}
 
     <!-- Toggler/collapsibe Button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -48,7 +49,7 @@
                 </a>
             </li>
             <li class="nav-item mt-3">
-                <a class="nav-link" href="/#blogs">Blogs</a>
+                <a class="nav-link" href="blog.edailyfocus.com/blog/">Blogs</a>
             </li>
             <li class="nav-item mt-3">
                 <a class="nav-link" href="/contact">Contact us</a>
