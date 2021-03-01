@@ -23,6 +23,10 @@ body {
     /* Safari, Android, iOS */ url("../fonts/nunito-v16-latin-200.svg#Nunito")
       format("svg"); /* Legacy iOS */
 }
+.nav-item {
+  display: flex;
+  align-items: center;
+}
 /* nunito-300 - latin */
 @font-face {
   font-family: "Nunito";
@@ -105,12 +109,18 @@ body {
       format("svg"); /* Legacy iOS */
 }
 nav.accounts {
-  background-color: #edc9af !important;
+  background-color: rgb(20 24 33) !important;
 }
 .basket-mini {
   margin-top: 10px;
-  color: hsl(0deg 2% 55%) !important;
+  color: #fff !important;
   font-size: 10px;
+}
+.basket-mini .btn.btn-outline-secondary {
+  color: #ffffff;
+  background-color: transparent;
+  background-image: none;
+  border-color: #feffff;
 }
 .carousel-caption h1 strong {
   color: #9c5000;

@@ -1,8 +1,8 @@
 .nav-link {
-  color: #211c1c !important;
+  color: #fff !important;
 }
 .logo-img {
-  width: 185px;
+  width: 145px;
 }
 .navbar.navbar-accounts .navbar-brand {
   background: url(../images/logo.png) no-repeat scroll 0 0 transparent;
@@ -14,12 +14,12 @@
   margin: 0.5rem;
 }
 #top_page.navbar .nav-link {
-  color: #9c8c8c !important;
+  color: #fff !important;
   font-size: 12px;
   padding: 0 15px;
 }
 .header {
-  background-color: hsl(25deg 63% 81%) !important;
+  background-color: rgb(20 24 33) !important;
 }
 .header .page_inner .btn {
   padding: 0px 5px;
