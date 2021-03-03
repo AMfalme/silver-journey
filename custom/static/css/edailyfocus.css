@@ -1,5 +1,5 @@
 body {
-  /* background-color: #edc9af; */
+  background-color: #f1ecec;
 }
 .bg-dark {
   background-color: #1e254e !important;
@@ -109,19 +109,14 @@ body {
       format("svg"); /* Legacy iOS */
 }
 nav.accounts {
-  background-color: rgb(20 24 33) !important;
+  background-color: #ebc2af !important;
 }
 .basket-mini {
   margin-top: 10px;
-  color: #fff !important;
+  color: hsl(0deg 2% 55%) !important;
   font-size: 10px;
 }
-.basket-mini .btn.btn-outline-secondary {
-  color: #ffffff;
-  background-color: transparent;
-  background-image: none;
-  border-color: #feffff;
-}
+
 .carousel-caption h1 strong {
   color: #9c5000;
 }
@@ -163,6 +158,6 @@ nav.accounts {
 }
 
 .footer img {
-  width: 53%;
-  margin: 25px auto;
+  width: 150px;
+  margin: 0 auto;
 }

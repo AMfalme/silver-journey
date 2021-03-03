@@ -1,9 +1,9 @@
 .navbar.navbar-accounts .navbar-brand {
-  background: url("../../images/transparent.png") no-repeat;
+  background: url("../../images/logo_transparent.png") no-repeat;
 
   width: 155px;
-
-  background-size: cover;
+  height: 100px;
+  background-size: contain;
 }
 .bg-dark {
   background-color: #1e254e !important;

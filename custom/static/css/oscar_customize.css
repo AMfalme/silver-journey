@@ -1,5 +1,5 @@
 .nav-link {
-  color: #fff !important;
+  color: #211c1c !important;
 }
 .logo-img {
   width: 145px;
@@ -14,12 +14,11 @@
   margin: 0.5rem;
 }
 #top_page.navbar .nav-link {
-  color: #fff !important;
   font-size: 12px;
   padding: 0 15px;
 }
 .header {
-  background-color: rgb(20 24 33) !important;
+  background-color: #ebc2af;
 }
 .header .page_inner .btn {
   padding: 0px 5px;
