@@ -125,9 +125,8 @@ nav.accounts {
   justify-content: space-around;
 }
 .carousel-img__size {
-  height: 250px;
-  min-width: 100%;
-  border-radius: 25px;
+  height: 70vh;
+  min-height: 400px;
 }
 
 .navbar {

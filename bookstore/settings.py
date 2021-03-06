@@ -27,7 +27,7 @@ SECRET_KEY = 'e$^4^o)m=vfv-=)(^p_#6ws(a26=72ohbt2i)t4ppwavh-gyet'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['edailyfocus.com', 'localhost']
+ALLOWED_HOSTS = ['www.edailyfocus.com', 'edailyfocus.com', 'localhost']
 
 
 # Application definition
@@ -84,7 +84,122 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
+OSCAR_DASHBOARD_NAVIGATION = [
+    {
+        'label': ('Dashboard'),
+        'icon': 'fas fa-list',
+        'url_name': 'dashboard:index',
+    },
+    {
+        'label': ('Catalogue'),
+        'icon': 'fas fa-sitemap',
+        'children': [
+            {
+                'label': ('Books'),
+                'url_name': 'dashboard:catalogue-product-list',
+            },
+            {
+                'label': ('Book Types'),
+                'url_name': 'dashboard:catalogue-class-list',
+            },
 
+            {
+                'label': ('Ranges'),
+                'url_name': 'dashboard:range-list',
+            },
+            {
+                'label': ('Low stock alerts'),
+                'url_name': 'dashboard:stock-alert-list',
+            },
+            {
+                'label': ('Options'),
+                'url_name': 'dashboard:catalogue-option-list',
+            },
+        ]
+    },
+    {
+        'label': ('Fulfilment'),
+        'icon': 'fas fa-shopping-cart',
+        'children': [
+            {
+                'label': ('Orders'),
+                'url_name': 'dashboard:order-list',
+            },
+            {
+                'label': ('Statistics'),
+                'url_name': 'dashboard:order-stats',
+            },
+            {
+                'label': ('Partners'),
+                'url_name': 'dashboard:partner-list',
+            },
+            # The shipping method dashboard is disabled by default as it might
+            # be confusing. Weight-based shipping methods aren't hooked into
+            # the shipping repository by default (as it would make
+            # customising the repository slightly more difficult).
+            # {
+            #     'label': ('Shipping charges'),
+            #     'url_name': 'dashboard:shipping-method-list',
+            # },
+        ]
+    },
+    {
+        'label': ('Customers'),
+        'icon': 'fas fa-users',
+        'children': [
+            {
+                'label': ('Customers'),
+                'url_name': 'dashboard:users-index',
+            },
+            {
+                'label': ('Stock alert requests'),
+                'url_name': 'dashboard:user-alert-list',
+            },
+        ]
+    },
+    {
+        'label': ('Offers'),
+        'icon': 'fas fa-bullhorn',
+        'children': [
+            {
+                'label': ('Offers'),
+                'url_name': 'dashboard:offer-list',
+            },
+            {
+                'label': ('Vouchers'),
+                'url_name': 'dashboard:voucher-list',
+            },
+            {
+                'label': ('Voucher Sets'),
+                'url_name': 'dashboard:voucher-set-list',
+            },
+
+        ],
+    },
+    {
+        'label': ('Content'),
+        'icon': 'fas fa-folder',
+        'children': [
+            {
+                'label': ('Pages'),
+                'url_name': 'dashboard:page-list',
+            },
+            {
+                'label': ('Email templates'),
+                'url_name': 'dashboard:comms-list',
+            },
+            {
+                'label': ('Reviews'),
+                'url_name': 'dashboard:reviews-list',
+            },
+        ]
+    },
+    {
+        'label': ('Reports'),
+        'icon': 'fas fa-chart-bar',
+        'url_name': 'dashboard:reports-index',
+    },
+]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

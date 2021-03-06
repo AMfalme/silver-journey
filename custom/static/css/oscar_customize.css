@@ -1451,3 +1451,9 @@ h3.h3 {
   border: none;
   color: #04751d;
 }
+.side_categories.bg-light {
+  background-color: #f1ecec !important;
+  box-shadow: 0px -4px 10px #0000002b;
+  min-height: 100%;
+  border-bottom: none;
+}

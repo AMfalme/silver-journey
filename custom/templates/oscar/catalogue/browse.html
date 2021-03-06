@@ -1,4 +1,4 @@
-{% extends 'oscar/layout_2_col.html' %}
+{% extends 'oscar/layout.html' %}
 {% load basket_tags %}
 {% load category_tags %}
 {% load product_tags %}
@@ -6,6 +6,9 @@
 
 {% block title %}
 {% if summary %}{{ summary }} |{% endif %} {{ block.super }}
+{% endblock %}
+{% block hero %}
+{% include 'custom/index.html' %}
 {% endblock %}
 {% block column_left %}
 {% category_tree as tree_categories %}
@@ -80,7 +83,6 @@
     {% endif %}
 </form>
 
-{% include 'custom/index.html' %}
 {% if products %}
 <section class="mt-5">
     <div>
